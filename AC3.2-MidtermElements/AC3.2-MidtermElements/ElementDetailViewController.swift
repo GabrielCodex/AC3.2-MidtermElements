@@ -22,11 +22,25 @@ class ElementDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        if detailElement.boiling == 0 {
+            self.boilLabel.text = "Boiling Point: N/A"
+        } else {
+            self.boilLabel.text = "Boiling Point: \(detailElement.boiling!)"
+        }
+        if detailElement.melting == 0 {
+            self.meltLabel.text = "Melting Point: N/A"
+        } else {
+            self.meltLabel.text = "Melting Point: \(detailElement.melting!)"
+        }
+        
         self.symbolLabel.text = "Symbol: \(detailElement.symbol)"
         self.numberLabel.text = "Number: \(detailElement.number)"
         self.weightLabel.text = "Weight: \(detailElement.weight)"
-        self.boilLabel.text = "Boiling Point: \(detailElement.boiling)"
-        self.meltLabel.text = "Melting Point: \(detailElement.melting)"
+        
+        //self.meltLabel.text = "Melting Point: \(detailElement.melting)"
         self.messageLabel.text = "Type in your name and hit Send to post your favorite element"
         
         self.title = detailElement.name
